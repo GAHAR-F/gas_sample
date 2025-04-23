@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>GreenFuel Gas Station</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", sans-serif;
+      }
+
+      body {
+        background-color: #f9f9f9;
+        color: #333;
+        line-height: 1.6;
+      }
+
+      header {
+        background-color: #005f73;
+        color: white;
+        padding: 1rem;
+        text-align: center;
+      }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        margin-top: 0.5rem;
+      }
+
+      nav ul li {
+        margin: 0 15px;
+      }
+
+      nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      section {
+        padding: 2rem;
+        max-width: 800px;
+        margin: auto;
+      }
+
+      section#home {
+        background-color: #e0fbfc;
+        text-align: center;
+      }
+
+      section#services ul {
+        list-style: none;
+        padding-left: 0;
+      }
+
+      section#services li {
+        margin-bottom: 10px;
+      }
+
+      footer {
+        text-align: center;
+        padding: 1rem;
+        background-color: #005f73;
+        color: white;
+        margin-top: 2rem;
+      }
+
+      .map-container {
+        margin-top: 1rem;
+        border: 2px solid #ccc;
+        border-radius: 8px;
+        overflow: hidden;
+      }
+      @media (max-width: 768px) {
+        nav ul {
+          display: none; /* Hide the menu by default on small screens */
+          flex-direction: column; /* Stack menu items vertically */
+        }
+        nav ul.active {
+          display: block; /* Show the menu when active */
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>GreenFuel Gas Station</h1>
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section id="home">
+      <h2>Welcome to GreenFuel</h2>
+      <p>Your trusted fuel partner. Clean energy, clean service.</p>
+    </section>
+
+    <section id="services">
+      <h2>Our Services</h2>
+      <ul>
+        <li>⛽ Petrol & Diesel Refilling</li>
+        <li>🚗 Car Wash & Cleaning</li>
+        <li>🧰 Oil Change & Maintenance</li>
+        <li>🍔 Mini Mart & Snacks</li>
+      </ul>
+    </section>
+
+    <section id="about">
+      <h2>About Us</h2>
+      <p>
+        At GreenFuel, we focus on providing high-quality fuel and friendly
+        service. Serving the Bahir Dar community with care and commitment.
+      </p>
+    </section>
+
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <p>Email: greenfuel@example.com</p>
+      <p>Phone: +251 912 345 678</p>
+      <p>Location: Bahir Dar, Ethiopia</p>
+    </section>
+
+    <section id="contact">
+      <div class="map-container">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3944.3551460145684!2d37.36902677475168!3d11.599984591739305!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1643abc123456789%3A0x9876fedcba123456!2sBahir%20Dar!5e0!3m2!1sen!2set!4v1612345678901"
+          width="100%"
+          height="300"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        >
+        </iframe>
+      </div>
+    </section>
+
+    <footer>
+      <p>&copy; 2025 GreenFuel Gas Station. All rights reserved.</p>
+    </footer>
+  </body>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // Smooth scrolling for navigation links
+      const navLinks = document.querySelectorAll("nav ul li a");
+
+      navLinks.forEach((link) => {
+        link.addEventListener("click", function (e) {
+          e.preventDefault(); // Prevent the default anchor click behavior
+
+          const targetId = this.getAttribute("href"); // Get the target section ID
+          const targetSection = document.querySelector(targetId); // Select the target section
+
+          // Scroll to the target section smoothly
+          targetSection.scrollIntoView({
+            behavior: "smooth",
+          });
+        });
+      });
+
+      // Mobile menu toggle (optional)
+      const menuToggle = document.createElement("button");
+      menuToggle.textContent = "Menu";
+      menuToggle.style.backgroundColor = "#005f73";
+      menuToggle.style.color = "white";
+      menuToggle.style.border = "none";
+      menuToggle.style.padding = "0.5rem 1rem";
+      menuToggle.style.cursor = "pointer";
+      document.querySelector("header").prepend(menuToggle);
+
+      menuToggle.addEventListener("click", () => {
+        const nav = document.querySelector("nav ul");
+        nav.classList.toggle("active");
+        nav.style.display = nav.classList.contains("active") ? "block" : "flex";
+      });
+    });
+  </script>
+</html>
