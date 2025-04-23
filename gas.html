@@ -5,88 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>GreenFuel Gas Station</title>
     <link rel="stylesheet" href="style.css" />
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: "Segoe UI", sans-serif;
-      }
-
-      body {
-        background-color: #f9f9f9;
-        color: #333;
-        line-height: 1.6;
-      }
-
-      header {
-        background-color: #005f73;
-        color: white;
-        padding: 1rem;
-        text-align: center;
-      }
-
-      nav ul {
-        list-style: none;
-        display: flex;
-        justify-content: center;
-        margin-top: 0.5rem;
-      }
-
-      nav ul li {
-        margin: 0 15px;
-      }
-
-      nav ul li a {
-        color: white;
-        text-decoration: none;
-        font-weight: bold;
-      }
-
-      section {
-        padding: 2rem;
-        max-width: 800px;
-        margin: auto;
-      }
-
-      section#home {
-        background-color: #e0fbfc;
-        text-align: center;
-      }
-
-      section#services ul {
-        list-style: none;
-        padding-left: 0;
-      }
-
-      section#services li {
-        margin-bottom: 10px;
-      }
-
-      footer {
-        text-align: center;
-        padding: 1rem;
-        background-color: #005f73;
-        color: white;
-        margin-top: 2rem;
-      }
-
-      .map-container {
-        margin-top: 1rem;
-        border: 2px solid #ccc;
-        border-radius: 8px;
-        overflow: hidden;
-      }
-      @media (max-width: 768px) {
-        nav ul {
-          display: none; /* Hide the menu by default on small screens */
-          flex-direction: column; /* Stack menu items vertically */
-        }
-        nav ul.active {
-          display: block; /* Show the menu when active */
-        }
-      }
-    </style>
   </head>
   <body>
     <header>
@@ -149,42 +67,6 @@
     <footer>
       <p>&copy; 2025 GreenFuel Gas Station. All rights reserved.</p>
     </footer>
+    <script src="javas.js"></script>
   </body>
-
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      // Smooth scrolling for navigation links
-      const navLinks = document.querySelectorAll("nav ul li a");
-
-      navLinks.forEach((link) => {
-        link.addEventListener("click", function (e) {
-          e.preventDefault(); // Prevent the default anchor click behavior
-
-          const targetId = this.getAttribute("href"); // Get the target section ID
-          const targetSection = document.querySelector(targetId); // Select the target section
-
-          // Scroll to the target section smoothly
-          targetSection.scrollIntoView({
-            behavior: "smooth",
-          });
-        });
-      });
-
-      // Mobile menu toggle (optional)
-      const menuToggle = document.createElement("button");
-      menuToggle.textContent = "Menu";
-      menuToggle.style.backgroundColor = "#005f73";
-      menuToggle.style.color = "white";
-      menuToggle.style.border = "none";
-      menuToggle.style.padding = "0.5rem 1rem";
-      menuToggle.style.cursor = "pointer";
-      document.querySelector("header").prepend(menuToggle);
-
-      menuToggle.addEventListener("click", () => {
-        const nav = document.querySelector("nav ul");
-        nav.classList.toggle("active");
-        nav.style.display = nav.classList.contains("active") ? "block" : "flex";
-      });
-    });
-  </script>
 </html>
